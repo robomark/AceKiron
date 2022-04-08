@@ -1,1 +1,1 @@
-<img width="100%" src="https://raw.githubusercontent.com/AceKiron/profile-readme-terminal/main/animated.gif" align="center" alt="GitHub Terminal" />
+<img width="100%" src="https://raw.githubusercontent.com/AceKiron/AceKiron/main/assets/animated-terminal.gif" align="center" alt="Animated terminal" />

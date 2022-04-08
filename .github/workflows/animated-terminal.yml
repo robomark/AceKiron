@@ -1,0 +1,30 @@
+name: Update animated terminal
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  0 1,5,9,13,17,21 * * *
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm i
+      
+      - run: node scripts/animated-terminal.js
+        env:
+          GH_API_KEY: ${{secrets.GH_API_KEY}}
+
+      - run: git add assets/animated-terminal.gif
+      - run: git -c user.name=bot -c user.email=bot@github.com commit -a -m "Animated terminal updated"
+      - run: git push

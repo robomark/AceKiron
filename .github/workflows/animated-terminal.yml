@@ -25,6 +25,8 @@ jobs:
         env:
           GH_API_KEY: ${{secrets.GH_API_KEY}}
 
+      - run: ls -R
+
       - run: git add assets/animated-terminal.gif
       - run: git -c user.name=bot -c user.email=bot@github.com commit -a -m "Animated terminal updated"
       - run: git push

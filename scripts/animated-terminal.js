@@ -24,7 +24,6 @@ section2 = ({ totalStars, totalCommits, totalPRs, totalIssues, contributedTo, fo
             this.ctx.font = this.fontSize + 'px "Consolas"';
 
             this.lines = [];
-            this.padding = padding;
 
             this.width = width;
             this.height = height;

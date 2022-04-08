@@ -131,7 +131,7 @@ section2 = ({ totalStars, totalCommits, totalPRs, totalIssues, contributedTo, fo
 
     tc.clear();
 
-    typeWriter(tc, encoder, `${usernameLowercase}@127.0.0.1: ~$ _", "./checkout ${username}`);
+    typeWriter(tc, encoder, `${usernameLowercase}@127.0.0.1: ~$ _`, `./checkout ${username}`);
 
     tc.addLine("Fetching data from GitHub APIs...");
     tc.addLine("");

@@ -28,7 +28,7 @@ section2 = ({ totalStars, totalCommits, totalPRs, totalIssues, contributedTo, fo
             this.width = width;
             this.height = height;
 
-            this.maxLines = Math.floor((height - padding * 4) / this.fontSize);
+            this.maxLines = Math.floor((height - this.padding * 4) / this.fontSize);
 
             this.renderCount = 0;
         }

@@ -53,7 +53,7 @@ section2 = ({ totalStars, totalCommits, totalPRs, totalIssues, contributedTo, fo
             console.log(`Calling render() for the ${this.renderCount}th time.`);
             this.renderCount++;
 
-            this.ctx.fillStyle = "black";
+            this.ctx.fillStyle = "#182238";
             this.ctx.fillRect(0, 0, this.width, this.height);
 
             this.ctx.strokeStyle = "#ff00ff";

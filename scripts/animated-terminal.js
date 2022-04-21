@@ -6,8 +6,10 @@ const axios = require("axios");
 const apiKey = process.env.GH_API_KEY;
 const url = "https://api.github.com/graphql";
 
-const username = "AceKiron";
-const usernameLowercase = "acekiron";
+const config = require("../assets/config.json");
+
+const username = config.username;
+const usernameLowercase = username.toLowerCase();
 
 section2 = ({ totalStars, totalCommits, totalPRs, totalIssues, contributedTo, followers }) => {
     const width = 450;
@@ -43,6 +45,10 @@ section2 = ({ totalStars, totalCommits, totalPRs, totalIssues, contributedTo, fo
         editLine(cb) {
             let line = this.lines.pop();
             this.lines.push(cb(line));
+        }
+
+        removeLine() {
+            this.lines.pop();
         }
 
         clear() {
@@ -116,7 +122,7 @@ section2 = ({ totalStars, totalCommits, totalPRs, totalIssues, contributedTo, fo
         }
     }
 
-    tc.addLine("Release gitBIOS v2022.1 - Build date April 7th 2022");
+    tc.addLine("Release gitBIOS v2022.2 - Build date April 21th 2022");
     tc.addLine("(C) AceKiron 2022");
     tc.addLine("");
     addFrameLooped(encoder, tc.render(), 2);
@@ -131,7 +137,7 @@ section2 = ({ totalStars, totalCommits, totalPRs, totalIssues, contributedTo, fo
 
     tc.clear();
 
-    typeWriter(tc, encoder, `${usernameLowercase}@127.0.0.1: ~$ _`, `./checkout ${username}`);
+    typeWriter(tc, encoder, `${usernameLowercase}@127.0.0.1: ~$ _`, `./ghstats ${username}`);
 
     tc.addLine("Fetching data from GitHub APIs...");
     tc.addLine("");
@@ -144,8 +150,6 @@ section2 = ({ totalStars, totalCommits, totalPRs, totalIssues, contributedTo, fo
     encoder.addFrame(tc.render());
 
     tc.addLine("Total Commits:      " + totalCommits);
-    encoder.addFrame(tc.render());
-
     encoder.addFrame(tc.render());
 
     tc.addLine("Total PRs:          " + totalPRs);
@@ -178,6 +182,37 @@ section2 = ({ totalStars, totalCommits, totalPRs, totalIssues, contributedTo, fo
 
     // tc.addLine("Makefile            3.47%");
     // encoder.addFrame(tc.render());
+
+    tc.addLine(`${usernameLowercase}@127.0.0.1: ~$ _`);
+    addFrameLooped(encoder, tc.render(), 4);
+
+    typeWriter(tc, encoder, `${usernameLowercase}@127.0.0.1: ~$ _`, `./ghuserdata ${username}`);
+
+    tc.addLine("Fetching data from GitHub website...");
+    tc.addLine("");
+    addFrameLooped(encoder, tc.render(), 5);
+
+    const userdata = config.userdata;
+
+    if (userdata.company) {
+        tc.addLine("Company:  " + config.company);
+        encoder.addFrame(tc.render());
+    }
+
+    if (userdata.country) {
+        tc.addLine("Country:  " + config.country);
+        encoder.addFrame(tc.render());
+    }
+    
+    if (userdata.website) {
+        tc.addLine("Website:  " + config.pronouns);
+        encoder.addFrame(tc.render());
+    }
+
+    if (userdata.pronouns) {
+        tc.addLine("Pronouns: " + config.pronouns);
+        encoder.addFrame(tc.render());
+    }
 
     tc.addLine(`${usernameLowercase}@127.0.0.1: ~$ _`);
     addFrameLooped(encoder, tc.render(), 24);
@@ -239,8 +274,7 @@ axios({
     const followers = user.followers.totalCount;
     
     console.log("API response received");
-
-    // require("./index2")({ totalStars, totalCommits, totalPRs, totalIssues, contributedTo, followers });
+    
     section2({ totalStars, totalCommits, totalPRs, totalIssues, contributedTo, followers });
 }).catch((err) => {
     console.log("Error!");

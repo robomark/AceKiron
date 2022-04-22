@@ -186,6 +186,8 @@ section2 = ({ totalStars, totalCommits, totalPRs, totalIssues, contributedTo, fo
     tc.addLine(`${usernameLowercase}@127.0.0.1: ~$ _`);
     addFrameLooped(encoder, tc.render(), 4);
 
+    tc.removeLine();
+    
     typeWriter(tc, encoder, `${usernameLowercase}@127.0.0.1: ~$ _`, `./ghuserdata ${username}`);
 
     tc.addLine("Fetching data from GitHub website...");
@@ -195,22 +197,22 @@ section2 = ({ totalStars, totalCommits, totalPRs, totalIssues, contributedTo, fo
     const userdata = config.userdata;
 
     if (userdata.company) {
-        tc.addLine("Company:  " + config.company);
+        tc.addLine("Company:  " + userdata.company);
         encoder.addFrame(tc.render());
     }
 
     if (userdata.country) {
-        tc.addLine("Country:  " + config.country);
+        tc.addLine("Country:  " + userdata.country);
         encoder.addFrame(tc.render());
     }
     
     if (userdata.website) {
-        tc.addLine("Website:  " + config.pronouns);
+        tc.addLine("Website:  " + userdata.pronouns);
         encoder.addFrame(tc.render());
     }
 
     if (userdata.pronouns) {
-        tc.addLine("Pronouns: " + config.pronouns);
+        tc.addLine("Pronouns: " + userdata.pronouns);
         encoder.addFrame(tc.render());
     }
 

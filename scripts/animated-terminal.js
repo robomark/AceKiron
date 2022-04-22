@@ -207,7 +207,7 @@ section2 = ({ totalStars, totalCommits, totalPRs, totalIssues, contributedTo, fo
     }
     
     if (userdata.website) {
-        tc.addLine("Website:  " + userdata.pronouns);
+        tc.addLine("Website:  " + userdata.website);
         encoder.addFrame(tc.render());
     }
 

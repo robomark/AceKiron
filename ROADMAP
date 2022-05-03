@@ -1,1 +1,18 @@
-Hii, just for testing
+{
+    features: [
+        {
+            name: "Feature 4",
+            version: "2022.1",
+            status: "released"
+        },
+        {
+            name: "Feature 3",
+            version: "2022.2",
+            status: "beta"
+        },
+        {
+            name: "Feature 2",
+            status: "indev"
+        }
+    ]
+}

@@ -27,7 +27,7 @@ jobs:
 
 #       - uses: AceKiron/actions@push-to-repository
 #         with:
-#           files: "."
+#           files: "*"
 #           message: "Animated terminal updated"
 #           branch: main
 

@@ -22,6 +22,8 @@ jobs:
           country: "Netherlands"
           website: "https://acekiron.github.io/"
           pronouns: "They/them"
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
 #       - run: mkdir -p assets
 

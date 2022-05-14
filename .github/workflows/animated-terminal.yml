@@ -15,26 +15,34 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - run: mkdir -p assets
-
-      - name: Setup Node.js 16.x
-        uses: actions/setup-node@v3
+      - uses: AceKiron/actions@generate-profile-terminal
         with:
-          node-version: 16.x
-          cache: 'npm'
+          username: "AceKiron"
+          output-path: "./assets/animated-terminal.gif"
+          country: "Netherlands"
+          website: "https://acekiron.github.io/"
+          pronouns: "They/them"
 
-      - name: Install dependencies
-        run: npm i
+#       - run: mkdir -p assets
+
+#       - name: Setup Node.js 16.x
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 16.x
+#           cache: 'npm'
+
+#       - name: Install dependencies
+#         run: npm i
       
-      - run: node scripts/animated-terminal.js
-        env:
-          GH_API_KEY: ${{secrets.GH_API_KEY}}
+#       - run: node scripts/animated-terminal.js
+#         env:
+#           GH_API_KEY: ${{secrets.GH_API_KEY}}
 
-      - run: ls -R
+#       - run: ls -R
 
-      - run: |
-          git add assets/animated-terminal.gif
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git commit -m "Animated terminal updated" -a --allow-empty
-          git push origin main
+#       - run: |
+#           git add assets/animated-terminal.gif
+#           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+#           git config --local user.name "github-actions[bot]"
+#           git commit -m "Animated terminal updated" -a --allow-empty
+#           git push origin main

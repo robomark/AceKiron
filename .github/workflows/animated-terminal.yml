@@ -25,22 +25,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-#       - run: mkdir -p assets
-
-#       - name: Setup Node.js 16.x
-#         uses: actions/setup-node@v3
+#       - uses: AceKiron/actions@push-to-repository
 #         with:
-#           node-version: 16.x
-#           cache: 'npm'
-
-#       - name: Install dependencies
-#         run: npm i
-      
-#       - run: node scripts/animated-terminal.js
-#         env:
-#           GH_API_KEY: ${{secrets.GH_API_KEY}}
-
-#       - run: ls -R
+#           files: "."
+#           message: "Animated terminal updated"
+#           branch: main
 
 #       - run: |
 #           git add assets/animated-terminal.gif

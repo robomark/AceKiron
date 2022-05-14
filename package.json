@@ -1,8 +1,9 @@
 {
     "dependencies": {
-      "axios": "^0.26.1",
-      "canvas": "^2.9.1",
-      "dotenv": "^16.0.0",
-      "gifencoder": "^2.0.1"
+        "@actions/core": "^1.8.2",
+        "axios": "^0.26.1",
+        "canvas": "^2.9.1",
+        "dotenv": "^16.0.0",
+        "gifencoder": "^2.0.1"
     }
-  }
+}

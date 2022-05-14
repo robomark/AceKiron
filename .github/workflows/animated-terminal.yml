@@ -17,11 +17,11 @@ jobs:
 
       - uses: AceKiron/actions@generate-profile-terminal
         with:
-          username: "AceKiron"
-          output-path: "./assets/animated-terminal.gif"
-          country: "Netherlands"
-          website: "https://acekiron.github.io/"
-          pronouns: "They/them"
+          username: 'AceKiron'
+          output-path: './assets/animated-terminal.gif'
+          country: 'Netherlands'
+          website: 'https://acekiron.github.io/'
+          pronouns: 'They/them'
         env:
           GITHUB_TOKEN: ${{ github.token }}
 

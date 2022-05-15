@@ -25,11 +25,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-#       - uses: AceKiron/actions@push-to-repository
-#         with:
-#           files: "*"
-#           message: "Animated terminal updated"
-#           branch: "main"
+      - uses: AceKiron/actions@push-to-repository
+        with:
+          files: "assets/animated-terminal.gif"
+          message: "Animated terminal updated"
+          branch: "main"
 
 #       - run: |
 #           git add assets/animated-terminal.gif
